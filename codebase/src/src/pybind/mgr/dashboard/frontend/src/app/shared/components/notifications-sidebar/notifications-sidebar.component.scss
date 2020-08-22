@@ -1,0 +1,51 @@
+@import 'defaults';
+
+::ng-deep .ng-sidebar__content {
+  overflow: hidden !important;
+}
+
+::ng-deep .isPwdDisplayed .ng-sidebar {
+  top: 92px !important;
+}
+
+// sidebar
+::ng-deep .ng-sidebar {
+  &.ng-sidebar--opened {
+    margin-right: 20px;
+  }
+
+  width: 350px;
+  max-width: 90vw;
+  z-index: 9 !important;
+
+  top: 54px !important;
+  bottom: 10px !important;
+
+  .card {
+    height: 100%;
+
+    .card-body {
+      overflow: auto;
+    }
+  }
+
+  .separator {
+    padding: 5px 12px;
+    color: $color-popover-seperator-text;
+    background-color: $color-popover-seperator-bg;
+    font-size: 12px;
+  }
+
+  .btn-link .fa-trash-o {
+    color: $color-black;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
