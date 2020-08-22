@@ -17,3 +17,25 @@ We do not require assignment of copyright to contribute code; code is contribute
 You can clone from github with
 
 `git clone git@github.com:ceph/ceph`
+
+
+or, if you are not a github user,
+`git clone git://github.com/ceph/ceph`
+
+# Build Prerequisites
+
+The list of Debian or RPM packages dependencies can be installed with:
+
+Note that these instructions are meant for developers who are compiling the code for development and testing. To build binaries suitable for installation we recommend you build deb or rpm packages, or refer to the `ceph.spec.in` or `debian/rules` to see which configuration options are specified for production builds.
+
+Build instructions:
+
+`./do_cmake.sh
+cd build
+make`
+
+
+(Note: `do_cmake.sh` now defaults to creating a debug build of ceph that can be up to 5x slower with some workloads. Please pass "-DCMAKE_BUILD_TYPE=RelWithDebInfo" to do_cmake.sh to create a non-debug release.)
+
+
+(Note: `make` alone will use only one CPU thread, this could take a while. use the `-j` option to use more threads. Something like make `-j$(nproc)`  would be a good start.
